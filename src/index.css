@@ -547,10 +547,13 @@ button:hover {
   animation: loading 1.5s infinite;
 }
 
+.wrapedDivs{
+  overflow: hidden;
+}
+
 .bestRecipes {
   margin-top: 10px;  
   border-radius: 20px;
-  overflow: show;
 }
 
 .bestRated {
@@ -564,6 +567,7 @@ button:hover {
   border-radius: 20px;
   overflow: hidden;
 }
+
 
 .bestRating img {
   width: 100%;

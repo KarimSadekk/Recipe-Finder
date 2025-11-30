@@ -272,6 +272,96 @@
         "favourite": false
       },
       "date": "10/31/2025"
+    },
+    {
+      "id": "5dcf",
+      "recipe": {
+        "id": 15,
+        "name": "Saag (Spinach) with Makki di Roti",
+        "ingredients": [
+          "Mustard greens, washed and chopped",
+          "Spinach, washed and chopped",
+          "Cornmeal (makki ka atta)",
+          "Onions, finely chopped",
+          "Green chilies, chopped",
+          "Ginger, grated",
+          "Ghee",
+          "Salt to taste"
+        ],
+        "instructions": [
+          "Boil mustard greens and spinach until tender. Drain and blend into a coarse paste.",
+          "In a pan, sauté chopped onions, green chilies, and grated ginger in ghee until golden brown.",
+          "Add the greens paste and cook until it thickens.",
+          "Meanwhile, knead cornmeal with water to make a dough. Roll into rotis (flatbreads).",
+          "Cook the rotis on a griddle until golden brown.",
+          "Serve hot saag with makki di roti and a dollop of ghee."
+        ],
+        "prepTimeMinutes": 40,
+        "cookTimeMinutes": 30,
+        "servings": 3,
+        "difficulty": "Medium",
+        "cuisine": "Pakistani",
+        "caloriesPerServing": 280,
+        "tags": [
+          "Saag",
+          "Roti",
+          "Main course",
+          "Indian",
+          "Pakistani",
+          "Asian"
+        ],
+        "userId": 43,
+        "image": "https://cdn.dummyjson.com/recipe-images/15.webp",
+        "rating": 4.3,
+        "reviewCount": 86,
+        "mealType": [
+          "Breakfast",
+          "Lunch",
+          "Dinner"
+        ]
+      },
+      "date": "11/29/2025"
+    },
+    {
+      "id": "2dab",
+      "recipe": {
+        "id": 1,
+        "name": "Classic Margherita Pizza",
+        "ingredients": [
+          "Pizza dough",
+          "Tomato sauce",
+          "Fresh mozzarella cheese",
+          "Fresh basil leaves",
+          "Olive oil",
+          "Salt and pepper to taste"
+        ],
+        "instructions": [
+          "Preheat the oven to 475°F (245°C).",
+          "Roll out the pizza dough and spread tomato sauce evenly.",
+          "Top with slices of fresh mozzarella and fresh basil leaves.",
+          "Drizzle with olive oil and season with salt and pepper.",
+          "Bake in the preheated oven for 12-15 minutes or until the crust is golden brown.",
+          "Slice and serve hot."
+        ],
+        "prepTimeMinutes": 20,
+        "cookTimeMinutes": 15,
+        "servings": 4,
+        "difficulty": "Easy",
+        "cuisine": "Italian",
+        "caloriesPerServing": 300,
+        "tags": [
+          "Pizza",
+          "Italian"
+        ],
+        "userId": 166,
+        "image": "https://cdn.dummyjson.com/recipe-images/1.webp",
+        "rating": 4.6,
+        "reviewCount": 98,
+        "mealType": [
+          "Dinner"
+        ]
+      },
+      "date": "11/29/2025"
     }
   ],
   "favourites": [
@@ -282,6 +372,10 @@
     {
       "id": "f060",
       "recipeId": 3
+    },
+    {
+      "id": "c520",
+      "recipeId": 8
     }
   ],
   "favRecipes": [

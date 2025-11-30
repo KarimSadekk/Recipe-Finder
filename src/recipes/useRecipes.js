@@ -3,7 +3,7 @@ const useRecipes = () => {
     const [recipes, setRecipes] = useState([]); // search results
     const [favourites, setFavourites] = useState([]);
     const [favRecipes, setFavRecipes] = useState([]);
-    const [bestRecipes, setBestRecipes] = useState([])
+    const [bestRecipes, setBestRecipes] = useState([]);
 
     async function getRecipes() {
     const res = await fetch("http://localhost:8000/searchedBefore");
@@ -54,8 +54,15 @@ const useRecipes = () => {
       }
     }
 
+    async function fetchAllCuisines() {
+    const res = await fetch("https://dummyjson.com/recipes");
+    const data = await res.json();
+    setRecipes(data.recipes);
+  }
+
+
     return { recipes,setRecipes,getRecipes,fetchFavouritesID,favourites,fetchFavRecipes,
-             favRecipes,setFavourites,getBestRecipes,bestRecipes};
+             favRecipes,setFavourites,getBestRecipes,bestRecipes,fetchAllCuisines};
 }
  
 export default useRecipes;

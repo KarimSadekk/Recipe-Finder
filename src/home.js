@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 const Home = () => {
   const {recipes,getRecipes, bestRecipes, getBestRecipes} = useRecipes()
   const navigate = useNavigate();
+  const doubledList = [...bestRecipes,...bestRecipes];
   useEffect(()=>{
     getRecipes();
     getBestRecipes();
@@ -23,12 +24,18 @@ const Home = () => {
   
   return ( 
     <div className="homePage">
+      <div className="wrapedDivs">
      <motion.div className="bestRecipes"
-      animate={{x:["0%","-50%"]}}
-      transition={{repeat: Infinity, duration: 35, ease:"linear"}}
+        animate={{ x: ["105%", "-250%"] }}
+        transition={{
+          duration: 35,
+          ease: "linear",
+          repeat: Infinity,
+          repeatType: "loop"
+  }}
      >
       <div className="bestRated">
-      {bestRecipes.map(bestRecipe => (
+      {doubledList.map(bestRecipe => (
       <div onClick={(e)=>{e.preventDefault(); handleClick(bestRecipe)}} key={bestRecipe.id} className="bestRating">
         <img src={bestRecipe.image} alt={bestRecipe.name} />
         <h2>{bestRecipe.name}</h2>
@@ -37,6 +44,7 @@ const Home = () => {
     ))}
   </div>
 </motion.div>
+</div>
 
   <div className="hero-section">
     <div className="floating-shapes">

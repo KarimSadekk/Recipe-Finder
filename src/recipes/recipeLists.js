@@ -186,7 +186,7 @@ const RecipeList = ({recipes}) => {
           {localRecipes?.map((recipe, index) => (
           <>
           <motion.div 
-                                                  // needs to be inspected again
+                              // needs to be inspected again
           key={recipe.id}
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
