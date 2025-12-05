@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import useRecipes from "./recipes/useRecipes";
-import { div } from "framer-motion/client";
+import { motion } from "framer-motion";
 import "./cuisine.css";
 import { useNavigate } from "react-router-dom";
 const  Cuisines= () => {
@@ -19,12 +19,12 @@ const  Cuisines= () => {
 
     const navigate = useNavigate();
 
-    function handleClick(newRecipe){
+    function goToDetails(newRecipe){
     navigate(`/recipeDetails/${newRecipe.id}`,{
-      state: {  // ✅ Add 'state:' property
-          recipe: newRecipe // ✅ Use the fetched data directly
+      state: { 
+          recipe: newRecipe 
         }
-    }); // then navigate manually
+    }); 
   }
     const CUISINE_TO_COUNTRY = {
     Italian: "it",
@@ -51,9 +51,13 @@ const  Cuisines= () => {
     }
 
     return ( 
-        <div className="wrappedFlags">
-  {cuisine.map((cuisine, index) => (
-    <div className="flags" key={index}>
+    <div className="wrappedFlags">
+    {cuisine.map((cuisine, index) => (
+    <motion.div 
+     initial={{ opacity: 0, y: 15 }}
+     animate={{ opacity: 1, y: 0 }}
+     transition={{ duration: 0.1, delay: index * 0.02 }}
+    className="flags" key={index}>
       <div 
         className={`flag ${isClicked === cuisine ? 'active' : ''}`}
         onClick={() => handleClick(cuisine)}
@@ -68,10 +72,9 @@ const  Cuisines= () => {
 
       {isClicked === cuisine && (
         <div className="recipesContainer">
-          {recipes
-            .filter((r) => r.cuisine === cuisine)
+          {recipes.filter((r) => r.cuisine === cuisine)
             .map((recipe) => (
-              <div key={recipe.id} className="recipeView">
+              <div key={recipe.id} className="recipeView" onClick={()=>goToDetails(recipe)}>
                 <img src={recipe.image} alt={recipe.name} />
                 <div className="recipeInfo">
                   <h2>{recipe.name}</h2>
@@ -84,7 +87,7 @@ const  Cuisines= () => {
           }
         </div>
       )}
-    </div>
+    </motion.div>
   ))}
 </div>
     );
