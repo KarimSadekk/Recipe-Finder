@@ -1,4 +1,4 @@
-import { use, useEffect } from "react";
+import {useEffect } from "react";
 import RecipeList from "./recipes/recipeLists";
 import useRecipes from "./recipes/useRecipes"
 import { motion } from "framer-motion";

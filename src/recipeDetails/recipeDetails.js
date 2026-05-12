@@ -1,11 +1,10 @@
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation} from "react-router-dom";
 import "./recipedetails.css";
 
 
 const RecipeDetails = () => {
   const location = useLocation();
   const recipe = location.state?.recipe;
-  
 
   return ( 
       <div className="recipeDetails">

@@ -8,7 +8,7 @@ const RecipeList = ({recipes}) => {
   const [sortBy, setSortBy] = useState("name");
   const [order, setOrder] = useState("asc");
   const [localRecipes,setLocalRecipes] = useState([]);
-  const {favourites,setFavourites,fetchFavouritesID,getRecipes,fetchFavRecipes,setRecipes} = useRecipes();
+  const {favourites,setFavourites,fetchFavouritesID,getRecipes,fetchFavRecipes} = useRecipes();
 
   async function searchHistory(newRecipe) {
     try {
@@ -37,7 +37,7 @@ const RecipeList = ({recipes}) => {
 
    useEffect(() => {
     fetchFavouritesID();
-  }, []);
+  }, [fetchFavouritesID]);
   
   
 

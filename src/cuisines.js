@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import "./cuisine.css";
 import { useNavigate } from "react-router-dom";
 const  Cuisines= () => {
-    const {fetchAllCuisines, recipes, setRecipes} = useRecipes();
+    const {fetchAllCuisines, recipes} = useRecipes();
     const [cuisine, setCuisines] = useState([])
     const [isClicked, setIsClicked] = useState(false)
     useEffect(()=>{
