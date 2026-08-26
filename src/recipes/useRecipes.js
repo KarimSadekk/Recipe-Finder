@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 const useRecipes = () => {
     const [recipes, setRecipes] = useState([]); // search results
     const [favourites, setFavourites] = useState([]);
     const [favRecipes, setFavRecipes] = useState([]);
     const [bestRecipes, setBestRecipes] = useState([]);
 
-    async function getRecipes() {
+    const getRecipes = useCallback(async () => {
     const res = await fetch("http://localhost:8000/searchedBefore");
     const data = await res.json();
     const mapped = data.map(r => ({
@@ -13,9 +13,9 @@ const useRecipes = () => {
     }));
     setRecipes(mapped);
     return data;
-  }
+  }, []);
 
-  async function fetchFavouritesID() {
+  const fetchFavouritesID = useCallback(async () => {
       try {
         const res = await fetch("http://localhost:8000/favourites");
         const data = await res.json();
@@ -23,9 +23,9 @@ const useRecipes = () => {
       } catch (error) {
         console.error("Error fetching favourites:", error);
       }
-    }
+    }, []);
 
-    async function fetchFavRecipes() {
+    const fetchFavRecipes = useCallback(async () => {
       try {
         const res = await fetch("http://localhost:8000/favRecipes");
         const data = await res.json();
@@ -37,28 +37,28 @@ const useRecipes = () => {
       } catch (error) {
         console.error("Error fetching favourites:", error);
       }
-    }
+    }, []);
 
-    async function getBestRecipes() {
+    const getBestRecipes = useCallback(async () => {
       try{
       const res = await fetch("https://dummyjson.com/recipes");
       const data = await res.json();
-      
+
       const sorted = data.recipes
       .sort((a, b) => b.rating - a.rating)
-      .slice(0, 10); 
+      .slice(0, 10);
 
       setBestRecipes(sorted) //
       }catch(error){
         console.error("Error fetching favourites:", error);
       }
-    }
+    }, []);
 
-    async function fetchAllCuisines() {
+    const fetchAllCuisines = useCallback(async () => {
     const res = await fetch("https://dummyjson.com/recipes");
     const data = await res.json();
     setRecipes(data.recipes);
-  }
+  }, []);
 
 
     return { recipes,setRecipes,getRecipes,fetchFavouritesID,favourites,fetchFavRecipes,

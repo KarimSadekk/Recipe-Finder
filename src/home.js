@@ -10,7 +10,7 @@ const Home = () => {
   useEffect(()=>{
     getRecipes();
     getBestRecipes();
-  },[])
+  },[getRecipes, getBestRecipes])
 
   function handleClick(newRecipe){
     navigate(`/recipeDetails/${newRecipe.id}`,{

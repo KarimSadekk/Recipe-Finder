@@ -9,7 +9,7 @@ const Favourites = () => {
         getRecipes();
         fetchFavRecipes();
         fetchFavouritesID();
-}, []);
+}, [getRecipes, fetchFavRecipes, fetchFavouritesID]);
 
 
   useEffect(() => {
