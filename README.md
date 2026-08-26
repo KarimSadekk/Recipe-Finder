@@ -1,6 +1,7 @@
 ## Recipe Finder - web app
 
 Recipe finder is a full application that helps you find the recipes you would like, with some catchy designs and modern animations, you can access details or each recipe, search for any dish, add it to your favorites, and bon appetite!
+
 The app to review: https://recipefinder-k.netlify.app/
 
 what does this app do (features)?
