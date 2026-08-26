@@ -9,7 +9,7 @@ const  Cuisines= () => {
     const [isClicked, setIsClicked] = useState(false)
     useEffect(()=>{
         fetchAllCuisines();
-    },[])
+    },[fetchAllCuisines])
 
     useEffect(()=>{
         if (!recipes.length) return
